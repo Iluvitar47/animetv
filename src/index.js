@@ -1,5 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
+import 'normalize.css';
 import App from './app';
-
-render(<App />,document.getElementById('root'));
+import { GlobalStyles } from './global-styles';
+//importation des styles global dans APP
+render(
+    <>
+        <GlobalStyles />
+        <App />
+    </>,
+    document.getElementById('root'));
