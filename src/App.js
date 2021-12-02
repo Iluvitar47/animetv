@@ -8,8 +8,8 @@ export default function App() { // on exporte par default la fonction app
   const { user } = useAuthListener(); // la constante user se définit sur la valeur de useAuthListener
   
   return (
-    <Router>
-      <Switch>
+    <Router> 
+      <Switch>{/* Utilisation des classes router et switch  */}
         <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
           <Signin />
         </IsUserRedirect>
