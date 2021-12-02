@@ -7,10 +7,11 @@ import { firebase } from './lib/firebase.prod';
 import {FirebaseContext} from './context/firebase';
 //importation des styles global dans APP
 render(
-    <>
-        <FirebaseContext.Provider value={{ firebase }}>
-            <GlobalStyles />
-            <App />
-        </FirebaseContext.Provider>
-    </>,
-    document.getElementById('root'));
+    <React.StrictMode>
+      <FirebaseContext.Provider value={{ firebase }}>
+        <GlobalStyles />
+        <App />
+      </FirebaseContext.Provider>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
