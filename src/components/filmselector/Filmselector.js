@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Filmselector.css';
 
 const listeFilms = [
     ["Le Voyage de Chihiro",
@@ -40,7 +41,7 @@ const Filmselector = () => {
 
 
     const invertState = (numFilm) => { // fonction qui inverse l'etat favoris du film passe en parametre
-        alert("ajouter aux favoris")
+        // alert("ajouter")
         debugger
         if (listeFilms[numFilm][5] === false) {
             listeFilms[numFilm][5] = true;  // Un setter est une fonction qui définit la valeur d'une variable
@@ -51,13 +52,15 @@ const Filmselector = () => {
     
 
     return (
-        <div>
-            {"FAVORIS=" + favoris}
+        <div class='content'>
+            
             {listeFilms.map((elt, index) => <div> {/* elt = un ligne de mon tableau*/}
                 <h1>{elt[0]}</h1> {/* elt[0] = le nom du film */}
-                <img src={elt[3]} width="100px" alt="pas la" />
+                <p>{elt[1]}</p>
+                <img src={elt[3]} width="150px" alt="pas la" />
                 <button onClick={() => invertState(index)}>ajouter aux favoris</button>
             </div>)}
+
 
             {/* {favoris ? <div>{listeFilms.map((elt, key) => <h1 key={key}>{elt[1]}</h1>)}</div> : ''}
             {favoris ? <button onClick={(() => {

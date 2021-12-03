@@ -1,0 +1,21 @@
+
+.content{
+    
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 13rem;
+    margin-bottom: 4rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: stretch;
+}
+
+h1{
+    color: white;
+}
+
+p{
+    color: white;
+}
