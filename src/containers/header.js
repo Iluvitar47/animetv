@@ -14,3 +14,14 @@ export function HeaderContainer({children}) {
         </Header>
     )
 }
+
+export function HeaderContainer2({children}) {
+    return (
+        <Header>
+            <Header.Frame>
+                <Header.Logo to={ROUTES.HOME} alt="Netflix" src={logo}/>
+            </Header.Frame>
+            {children}
+        </Header>
+    )
+}

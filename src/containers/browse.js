@@ -6,6 +6,8 @@ import logo from '../logo.svg';
 import { FirebaseContext } from '../context/firebase';
 import { SelectProfileContainer } from './profiles';
 import { FooterContainer } from './footer';
+import { useHistory } from "react-router-dom";
+
 
 
 export function BrowseContainer({ slides }) {
@@ -17,6 +19,12 @@ export function BrowseContainer({ slides }) {
   
     const { firebase } = useContext(FirebaseContext);
     const user = firebase.auth().currentUser || {};
+
+    const history = useHistory();
+    const faireRedirection = () =>{ 
+      let url = "./animetvplus";
+      history.push(url);
+    };
   
     useEffect(() => {
       setTimeout(() => {
@@ -52,6 +60,9 @@ export function BrowseContainer({ slides }) {
               </Header.TextLink>
               <Header.TextLink active={category === 'films' ? 'true' : 'false'} onClick={() => setCategory('films')}>
                 Films
+              </Header.TextLink>
+              <Header.TextLink onClick={faireRedirection} >
+                AnimeTV +
               </Header.TextLink>
             </Header.Group>
             <Header.Group>
@@ -99,7 +110,7 @@ export function BrowseContainer({ slides }) {
               <Card.Feature category={category}>
                 <Player>
                   <Player.Button />
-                  <Player.Video src="/videos/bunny.mp4" />
+                  <Player.Video src="/videos/David Goodenough _ Bande Annonce ( 2020 ).mp4" />
                 </Player>
               </Card.Feature>
             </Card>
@@ -111,4 +122,3 @@ export function BrowseContainer({ slides }) {
       <SelectProfileContainer user={user} setProfile={setProfile} />
     );
   }
-  

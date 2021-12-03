@@ -3,7 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import {seedDatabase} from '../seed';
 
-
+// la config de ma base de donnée firebase 
 const config = {
     apiKey: "AIzaSyAWDPleGo6KRWoEAQfveFOLMTSekQ_nRO8",
     authDomain: "animetv-a0bad.firebaseapp.com",
@@ -15,6 +15,6 @@ const config = {
 
 const firebase = Firebase.initializeApp(config);
 
-// seedDatabase (firebase);
+// seedDatabase (firebase); permet d'envoyer ma base de donnée seed, a faire une seul fois
 
 export { firebase };

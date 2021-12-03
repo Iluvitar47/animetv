@@ -1,3 +1,4 @@
+// le style css global
 import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
